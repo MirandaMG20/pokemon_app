@@ -3,7 +3,7 @@ import React from 'react'
 
 const myStyle = {
     color: '#ffffff',
-    backgroundColor: '#000000',
+    backgroundColor: '#9fe8fa',
 }
 
 function Show({ pokemon }) {
@@ -13,7 +13,7 @@ function Show({ pokemon }) {
     return (
         <div style={myStyle}>
             <h1> Gotta Catch 'Em All! </h1>
-            <h2>{pokemon.name}</h2>
+            <h2>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h2>
             <br />
             <img src={ pokemon.img + '.jpg'} />
             <br />
