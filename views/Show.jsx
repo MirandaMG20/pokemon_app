@@ -13,19 +13,8 @@ function Show({ pokemon }) {
     return (
         <div>
             <div style={myStyle}> Gotta Catch 'Em All! </div>
-            {
-                pokemon.map((poke, i) => {
-                    return (
-                        <ul>
-                            <li key={i}>
-                                <a href={`/pokemon/${i}`}> {poke.name[0].toUpperCase() + poke.name.slice(1)} </a>
-                                <br />
-                                <img></img>
-                            </li>
-                        </ul>
-                    )
-                })
-            }
+            <h2>{pokemon.name}</h2>
+            <img src={{pokemon.img}} />
         </div>
     )
 }

@@ -30,8 +30,8 @@ app.get('/pokemon', (req, res) => {
 })
 
 // Show pokemon Middleman
-app.get('/:index', (req, res) => {
+app.get('/pokemon/:id', (req, res) => {
     res.render('Show', { 
-        poke: pokemon[req.params.index], 
+        poke: pokemon[req.params.id], 
     })
 })
