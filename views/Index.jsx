@@ -9,7 +9,7 @@ const myStyle = {
 function Index({ pokemon }) {
     return (
         <div>
-            <div style={myStyle}> See All The Pokemon! </div>
+            <h1 style={myStyle}>See All The Pokemon!</h1>
             {
                 pokemon.map((pokemon, i) => {
                     return (
