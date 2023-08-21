@@ -26,7 +26,14 @@ const pokemon = [
     { 
         name: "wartortle", 
         img: "http://img.pokemondb.net/artwork/wartortle" 
-    }
+    },
+    // { 
+    //     name: "butterfree", 
+    //     img: "http://img.pokemondb.net/artwork/butterfree" 
+    // },
 ]
 
 module.exports = pokemon
+
+
+// https://pokemondb.net/pokedex/all
