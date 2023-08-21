@@ -12,12 +12,20 @@ function Show({ pokemon }) {
 
     return (
         <div>
-            <h1 style={myStyle} > Gotta Catch 'Em All! </h1>
+
+            <nav>
+                <h1 style={myStyle} > Gotta Catch 'Em All! </h1>
+                <a href={`/`}> Home </a>
+                <br />
+                <a href='/pokemon'> Pokemon </a>
+                <br />
+                <a href="/pokemon/new"> Create New Pokemon </a>
+            </nav>
+
             <h2>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h2>
             <br />
-            <img src={ pokemon.img + '.jpg'} alt={ pokemon.name[0].toUpperCase() + pokemon.name.slice(1) }/>
-            <br />
-            <a href='/pokemon'> Back </a>
+            <img src={pokemon.img + '.jpg'} alt={pokemon.name[0].toUpperCase() + pokemon.name.slice(1)} />
+
         </div>
     )
 }

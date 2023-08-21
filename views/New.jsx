@@ -3,7 +3,13 @@ import React from 'react'
 function New() {
     return (
         <div>
-            <h1>New Pokemon Page</h1>
+            <nav>
+                <h1>New Pokemon Page</h1>
+                <a href={`/`}> Home </a>
+                <br />
+                <a href='/pokemon'> Pokemon </a>
+            </nav>
+            <br />
 
             <form action='/Pokemon' method='POST'>
                 Name: <input type='text' name='name' /> <br />

@@ -9,9 +9,11 @@ const myStyle = {
 function Index({ pokemon }) {
     return (
         <div>
-            
+
             <nav>
                 <h1 style={myStyle}>See All The Pokemon!</h1>
+                <a href={`/`}> Home </a>
+                <br />
                 <a href="/pokemon/new"> Create New Pokemon </a>
             </nav>
             <br />
