@@ -16,12 +16,12 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 // MIDDLEWARE
 app.use((req, res, next) => {
-    console.log('I run all routes!')
+    // console.log('I run all routes!')
     next();
 })
 
 // This allows the body of a post request
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 
 //ROUTE Home
 app.get('/', (req, res) => {
@@ -43,9 +43,14 @@ app.get('/pokemon/new', (req, res) => {
 })
 
 // Create = Post
-app.post('/pokemon', (req, res) =>{
+app.post('/pokemon', (req, res) => {
 
-    console.log('Created Pokemon: ', req.body)
+    const newPokemon = {
+        name: req.body.name,
+        img: "http://img.pokemondb.net/artwork/" + req.body.name.toLowerCase()
+    }
+
+    // console.log('Created Pokemon: ', req.body)
 
     if(req.body.readyToFight === 'on') {
         req.body.readyToFight = true;
@@ -53,16 +58,14 @@ app.post('/pokemon', (req, res) =>{
         req.body.readyToFight = false;
     }
 
-    pokemon.push(req.body)
-
-    console.log('The pokemon array ', pokemon)
-
+    pokemon.push(newPokemon)
     res.redirect('/pokemon') // Redirect to the new Array
+
 })
 
 // Show pokemon Middleman
 app.get('/pokemon/:id', (req, res) => {
-    res.render('Show', { 
-        pokemon: pokemon[req.params.id], 
+    res.render('Show', {
+        pokemon: pokemon[req.params.id],
     })
 })
