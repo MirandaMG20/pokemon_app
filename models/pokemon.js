@@ -1,3 +1,5 @@
+// https://pokemondb.net/pokedex/all
+
 const pokemon = [
     {
         name: "bulbasaur",
@@ -42,6 +44,3 @@ const pokemon = [
 ]
 
 module.exports = pokemon
-
-
-// https://pokemondb.net/pokedex/all
