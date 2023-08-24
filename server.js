@@ -1,3 +1,4 @@
+// Set up .env environment
 require('dotenv').config()
 // Set up Mongoose connection
 const mongoose = require('mongoose')
@@ -68,8 +69,10 @@ app.post('/pokemon', async (req, res) => {
     // pokemon.push(newPokemon)
     const newPokemon = await Poke.create({
         name: req.body.name,
-        img: "http://img.pokemondb.net/artwork/" + req.body.name.toLowerCase()
+        img: "http://img.pokemondb.net/artwork/" + req.body.name.toLowerCase(),
+        readyToFight: req.body.readyToFight
     })
+    console.log(newPokemon)
     res.redirect('/pokemon') // Redirect to the new Array
 })
 
@@ -80,3 +83,16 @@ app.get('/pokemon/:id', async (req, res) => {
         pokemon: onePokemon
     })
 })
+
+
+// *!*!* Delete 
+// remove() Danger! Will remove all instances
+// Tweet.findOneAndRemove({ name: "Enusaur" }) // This seems like a great choice
+//     // Tweet.findByIdAndRemove() // Finds by ID - great for delete routes in an express app!
+//     .then((pokes) => { // if database transaction succeeds
+//         console.log(pokes)
+//     }).catch((error) => { // if database transaction fails
+//         console.log(error)
+//     }).finally(() => { // close db connection either way
+//         db.close()
+//     })

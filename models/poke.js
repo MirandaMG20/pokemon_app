@@ -11,8 +11,7 @@ const pokeSchema = new mongoose.Schema(
             required: false
         },
         readyToFight: Boolean
-    },
-    { timestamps: true }
+    }
 )
 
 const Poke = mongoose.model('Poke', pokeSchema)
