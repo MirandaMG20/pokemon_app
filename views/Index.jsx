@@ -28,7 +28,7 @@ function Index({ pokemon }) {
                     return (
                         <ul key={i}>
                             <li>
-                                <a href={`/pokemon/${i}`}> {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)} </a>
+                                <a href={`/pokemon/${ pokemon.id }`}> {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)} </a>
                                 <br />
                             {pokemon.readyToFight ? "It's ready to fight!" : "It's NOT ready to fight."}
                             </li>
